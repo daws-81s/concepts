@@ -8,7 +8,7 @@ When a new person joins a project, you need to create a user account for them. T
 
 ### **Command to Create a User**
 ```bash
-sudo adduser <username>
+adduser <username>
 ```
 > **Note:** When a user is created in Linux, a group with the same name as the username is also created by default.
 
@@ -19,7 +19,7 @@ id <username>
 
 ### **Set User Password**
 ```bash
-sudo passwd <username>
+passwd <username>
 ```
 
 ## **Creating a Group**
@@ -27,7 +27,7 @@ To manage users effectively, you should create groups that correspond to differe
 
 ### **Command to Create a Group**
 ```bash
-sudo groupadd <groupname>
+groupadd <groupname>
 ```
 
 ## **Adding a User to a Group**
@@ -38,12 +38,12 @@ Once you have a user and a group, you can add the user to the appropriate group.
 
 ### **Add a User to a Primary Group**
 ```bash
-sudo usermod -g <groupname> <username>
+usermod -g <groupname> <username>
 ```
 
 ### **Add a User to a Secondary Group**
 ```bash
-sudo usermod -aG <groupname> <username>
+usermod -aG <groupname> <username>
 ```
 
 ## **Password-Based Authentication**
@@ -54,7 +54,7 @@ By default, Linux might disable password-based authentication. To enable it, you
 SSH configuration is available in `/etc/ssh/sshd_config`.
 
 ```bash
-sudo vim /etc/ssh/sshd_config
+vim /etc/ssh/sshd_config
 ```
 
 Ensure the following line is set to `yes`:
@@ -64,7 +64,7 @@ PasswordAuthentication yes
 
 ### **Restart SSH Service**
 ```bash
-sudo systemctl restart sshd
+systemctl restart sshd
 ```
 
 ## **Key-Based Authentication**
@@ -82,7 +82,7 @@ For enhanced security, it’s recommended to use SSH key-based authentication. T
 
 3. **Admin Creates the User**
    ```bash
-   sudo adduser <username>
+   adduser <username>
    ```
 
 4. **Create a `.ssh` Directory**
@@ -92,15 +92,15 @@ For enhanced security, it’s recommended to use SSH key-based authentication. T
      ```
    - Admin should create a `.ssh` directory within the user's home directory:
      ```bash
-     sudo mkdir /home/<username>/.ssh
-     sudo chmod 700 /home/<username>/.ssh
+     mkdir /home/<username>/.ssh
+     chmod 700 /home/<username>/.ssh
      ```
 
 5. **Create `authorized_keys` File**
    - Create the `authorized_keys` file inside the `.ssh` directory:
      ```bash
-     sudo touch /home/<username>/.ssh/authorized_keys
-     sudo chmod 600 /home/<username>/.ssh/authorized_keys
+     touch /home/<username>/.ssh/authorized_keys
+     chmod 600 /home/<username>/.ssh/authorized_keys
      ```
    - Open the file and paste the public key inside it.
 
@@ -113,7 +113,7 @@ For enhanced security, it’s recommended to use SSH key-based authentication. T
 
 7. **Restart SSH Service**
    ```bash
-   sudo systemctl restart sshd
+   systemctl restart sshd
    ```
 
 8. **Inform User to Log In**
