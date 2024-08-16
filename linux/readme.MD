@@ -8,7 +8,7 @@ When a new person joins a project, you need to create a user account for them. T
 
 ### **Command to Create a User**
 ```bash
-adduser <username>
+useradd <username>
 ```
 > **Note:** When a user is created in Linux, a group with the same name as the username is also created by default.
 
