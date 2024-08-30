@@ -1,0 +1,16 @@
+<Student>
+    <Name>sivakumar</Name>
+    <Email>info@joindevops.com</Email>
+    <Addresses>
+        <PermAddress>
+            <AddressLine1>marathalli</AddressLine1>
+            <AddressLine2>beml layou</AddressLine2>
+            <Street>vivekananda street</Street>
+        </PermAddress>
+        <CurrentAddress>
+            <AddressLine1>marathalli</AddressLine1>
+            <AddressLine2>beml layou</AddressLine2>
+            <Street>vivekananda street</Street>
+        </CurrentAddress>
+    </Addresses>
+</Student>
