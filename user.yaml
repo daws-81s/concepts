@@ -1,1 +1,20 @@
 # YAML works on indentation, means space
+- Name: sivakumar
+  Email: info@joindevops.com
+  Addresses: #list of address
+  - type: perm
+    addressline1: beml layout
+    addressline2: marathalli
+  - type: current
+    addressline1: beml layout
+    addressline2: marathalli
+
+- Name: Ramesh
+  Email: ramesh@joindevops.com
+  Addresses: #list of address
+  - type: perm
+    addressline1: beml layout
+    addressline2: marathalli
+  - type: current
+    addressline1: beml layout
+    addressline2: marathalli
