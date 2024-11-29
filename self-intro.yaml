@@ -1,0 +1,42 @@
+- question: self introduction
+  description: 
+  - My name is sivakumar Reddy. I have total 12 years of experience. I earlier worked as Java developer, later I shifted to DevOps and Cloud. 
+  - I am now working as Senior DevOps Engineer in my project.
+  - We are using RHEL9, Ansible for configuration management and VM deployments, Terraform for IaaC, Jenkins for CICD, multiple scanning tools like Sonar, Metasploit, Veracode, ECR scan, Docker for image building, Kubernetes for contianer orchestration, Our tesing team use few testing frameworks like Selenium and Cucumber, Shell script for simple automations and cronjobs, We have seperate monitoring team for ELK and prometheus. We are using Python for cloud and other automations.
+  - We take care of all the deployments from DEV to PROD through our atomated process. We let developers only focus on programming we handle everything else.
+  - We are following DevSecOps, Shiftleft, Build once and run anywhere strategies. We have our centralised CICD pipelines powered by Jenkins Shared libraries.
+  - We are following feature branching model. We have 2 types of branches. One is main as long lived branch and everything else is feature branches. Earlier we followed Git Model where we had master and development as long lived branches and Release, feature and hotfix as short lived branches.
+  - Developers create feature branches, once they push the code to remote branch we configured automated development pipelines through Jenkins webhooks.
+  - Once they complete development they raise PR and get the approval. We follow merge strategy.
+  - We are following Shiftleft where we scan and test the application in early stages like development. So that we can filter majority issues while development is going on.
+  - We have SonarQube for static source code analysis and static application security testing. We have quality gates configured where we it checks for 0 issues, 0 bugs, 0 vulnerabilities, Maintainbility and Security rating is A. Minimum code coverage is 80% if applications failed to meet this criteria we will fail the build.
+  - We have Metasploit as open source scanning tool, where we scan all the dependencies of a application. This tools recommends any upgrades or issues on the dependencies. Based on this our developers continously upgrade their dependencies.
+  - We are using veracode for dynamic application security testing, before going for QA we submit our application URL as target in veracode for attacks, if we find serious issues we work with developers to resolve them.
+  - We even enabled ECR scan to check the issues in our images.
+  - We build applications in only dev environment, we promote the same build into multiple environments with different configurations through helm charts. So here we addressed the issues of working in DEV and not working in PROD.
+  - We are using jenkins shared library, we have centralised pipelines for different programming langugages with different deployment platform. We have nodeJSEKS, nodeJSVM, JavaVM, javaEKS, pythonVM and PythonEKS pipelines. We make sure every component follow the same process of deployments. 
+  - We give developers a simple jenkinsfile referring our shared piplines. They send us their project and component and their programming langugage and their deployment platform. Based on this we will trigger appropriate platform.
+  - When we move to QA environment, our developers trigger pipeline it can fetch the image from ECR deploy the application through our helmcharts then we are calling testing team pipelines for integration tests.
+  - Before going for PROD, we have a CR process approval. Our support raises CR ticket in JIRA mentioning time, description, roll back plan, scanning results, testing results. Once it is approved we trigger PROD piplines in deployment window.
+  - Our pipeline checks for the JIRA status, deployment window. if everything is fine we fetch the image and deploy application in PROD environment. Later developers a simple sanity check.
+
+- question: What are you daily tasks and responsibilities
+  answer:
+  - We are a team of 5 members, we are loggin our work through our project management tool JIRA. We follow sprint process. We have daily standup calls.
+  - My team leader assings the tasks to us.
+  - We onboard projects into our DevOps process. We are taking care of infra through terraform in all environments. we developed our own terraform modules. We maintain these modules.
+  - We meet with development team explaining our piplines, understanding how they are developing and merging. We teach them feature branching and PR process.
+  - We will onboard them into Jenkins, Sonar, Veracode, Metasplot, Kubernetes, Ansible if they are following VM deployments. We create the required infra through terraform.
+  - We will setup pipelines for them and we will assist for the first 2 production releases.
+  - We will maintain existing application if they face any issues in any environments.
+  - Application teams frequently upgrade their versions we will assist them if they face issues. We take care of EKS upgrades, terraform upgrade, Jenkins agents.
+  - Each time SRE team upgrades other tools, we check our pipelines with our internal Hello World applications for compatability issues.
+  - We continously have a montly meetings to discuss on the improvements. Yesterday we had a meeting on using K8 Jenkins images instead of VM. We planned to scan the base images of our application before we use.
+  - We are planning to develop the centralised pipelines for .NET and go langugage.
+  - We are using Ansible playbooks to create the AMI of our legacy applications.
+  - Our applications are secure, scalable(HPA and VM autoscaling), HA(2 AZ).
+  - We will take care of persistant volumes if required by application teams.
+  - We continously upgrade our ingress, EBS and EFS drivers.
+
+- question: What are the challanges you faced.
+  answer: I was not aware of Kubernetes earlier. We were dealing legacy VM applications in my previous project. I learnt Kubernetes in 20 days and started implementing in our applications. I was asked to configure jenkins agents to nodejs projects. I was asked to setup ingress for one new project. We dont had any scannings in our project earlier. I proposed sonarscan is mandatory as per industry standards.I enabled sonar scan and quality gates in our project. We were creating resources directly earlier. Later I implemented terraform for better reusability and easy maintance.
