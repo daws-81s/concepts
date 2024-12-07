@@ -41,7 +41,7 @@ If you measure all four golden signals and page a human when one signal is probl
 
 ### ELK
 
-![alt text](images/elk.png)
+![alt text](elk.png)
 
 ELK is a stack/suit from elasticsearch. 
 
